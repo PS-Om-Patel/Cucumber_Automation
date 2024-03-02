@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="18.308">
+    <testcase classname="Portal Admin Actions" name="Admin user can modify specific user details" time="17.922">
+        <failure message="Unable to find element with locator By.xpath: (//div[@class='oxd-table-cell oxd-padding-cell']/div)[2]&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.8.2', revision: '826dbfc730'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'&#10;Driver info: driver.version: RemoteWebDriver" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given User is on LoginPage..................................................passed
+When User enter valid username and password and click Login.................passed
+Then User is redirected to Homepage of OrangeHRM............................passed
+Given the Admin user is in the Admin section of the portal..................passed
+When the Admin user clicks on the edit icon.................................passed
+And modifies the necessary details and clicks on the save button............passed
+Then the specific user details are updated accordingly......................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: (//div[@class='oxd-table-cell oxd-padding-cell']/div)[2]
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.2', revision: '826dbfc730'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at utilities.SeleniumMethods.getText(SeleniumMethods.java:61)
+	at pageObjects.AdminPage.textreturn(AdminPage.java:149)
+	at stepDefinitions.AdminStepDef.the_specific_user_details_are_updated_accordingly(AdminStepDef.java:111)
+	at ✽.the specific user details are updated accordingly(file:///C:/Users/om.patel/Downloads/BDD_Framework-master/BDD_Framework-master/./features/02Admin.feature:32)
+]]></failure>
+    </testcase>
+</testsuite>

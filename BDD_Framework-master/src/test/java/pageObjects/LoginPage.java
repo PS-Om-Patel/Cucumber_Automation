@@ -1,0 +1,52 @@
+package pageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import utilities.SeleniumMethods;
+
+public class LoginPage extends SeleniumMethods {
+	
+	public LoginPage(WebDriver driver) {
+		super(driver);
+		
+	}
+	
+	
+	private By usernameField=By.name("username");
+	private By passwordField=By.name("password");
+	private By LoginButton=By.xpath("//button[@type='submit']");
+	private By ErrorMessage=By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
+	private By requiredmessage=By.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
+	
+	
+	
+	public void portalLoginPage(String url) {
+		navigateURL(url);
+		verifyTitle("OrangeHRM");
+	}
+	
+	public void inputCredentials(String username, String Password)
+	{
+		sendKeys(usernameField,username);
+		sendKeys(passwordField,Password);
+		
+	}
+	
+	
+	
+	public void clickLogin() {
+		clickOn(LoginButton);
+	}
+	
+	public String getErrorMessageText() {
+	    return getText(ErrorMessage);
+	}
+	
+	public String requirederror()
+	{
+		return getText(requiredmessage);
+	}
+	
+
+}
